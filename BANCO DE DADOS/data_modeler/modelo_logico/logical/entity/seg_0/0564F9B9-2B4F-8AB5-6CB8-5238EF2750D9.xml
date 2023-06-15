@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0564F9B9-2B4F-8AB5-6CB8-5238EF2750D9" name="resposta">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 00:48:14 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="resposta_id" id="6E9176AA-454C-469C-3905-5F0048069B9F">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 00:48:20 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="resposta_texto" id="95F747EF-117D-1D2C-DF58-5621B99D2C46">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 00:48:35 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_post" id="120270C7-96EF-BB15-E53F-37FF54A4C932">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 00:49:00 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pergunta_id" id="AE9A7947-8A38-911F-ABF3-DD1890E549C4">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:21:56 UTC</createdTime>
+<generatorID>0D620CC3-3D4D-A116-304A-E375F1AAF7A8</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="true"/>
+</engineerTo>
+<referedAttribute>F5FCBE81-EE69-258B-DCE2-0742D4DA36A4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cliente_id" id="77AA9EAD-F2F8-6904-145A-94BF838494A3">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:24:56 UTC</createdTime>
+<generatorID>5A1E512A-00C1-92FD-502F-55E2B0D7B310</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="true"/>
+</engineerTo>
+<referedAttribute>06B024C6-FA94-3F27-B171-60D1EB0F80A4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CA6C0C7F-3104-5869-2C3F-A04CA3EBED7A" name="resposta PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 00:48:32 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6E9176AA-454C-469C-3905-5F0048069B9F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="acessa" directorySegmentName="seg_0" id="835B1C06-BE6A-FED9-ADC5-17D6418CF29B">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:20:53 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="0D4BBE5F-EAFE-8472-7E47-E4E434B5CA3C" value="true"/>
+</engineerTo>
+<sourcePk>B9717EF2-20EC-A4F3-3B87-249F9C92C936</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7A33A500-9234-CC2D-9D7B-2DAC7A605CC1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7832AF61-3DEB-60ED-9FDF-CAC7B0E98FB6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9DEFFED6-A92E-5A77-DEA0-C25CF362A3F5" name="resposta">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>0564F9B9-2B4F-8AB5-6CB8-5238EF2750D9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="resposta_id" id="3DF303D8-10B8-EAD9-E109-C1030C50DDA6">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>6E9176AA-454C-469C-3905-5F0048069B9F</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="resposta_texto" id="B27BE04A-EF8B-1652-4672-C8EAE3FCC842">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>95F747EF-117D-1D2C-DF58-5621B99D2C46</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_post" id="9D397739-7686-8E56-AAFE-446F605E9D32">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>120270C7-96EF-BB15-E53F-37FF54A4C932</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pergunta_pergunta_id" id="A2BFE319-3175-618E-A342-FE9BBA077BF1">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:25:31 UTC</createdTime>
+<generatorID>AE9A7947-8A38-911F-ABF3-DD1890E549C4</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65EA73C2-5C15-6861-D76D-DE703122172A" referredColumn="379F8E38-EA73-29E7-7EF3-D9F93685C60A"/>
+</associations>
+</Column>
+<Column name="cliente_cliente_id" id="12DEFA75-E0BC-930A-7BAA-78C480C1469A">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:25:31 UTC</createdTime>
+<generatorID>77AA9EAD-F2F8-6904-145A-94BF838494A3</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0919C2E6-316A-A9FA-5D17-44C35AC44E17" referredColumn="88EC339E-F273-B9D4-EB83-8B993EBCFF9E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A43B12ED-F40A-0B31-94A0-8C297DEB9BB8" name="resposta_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>CA6C0C7F-3104-5869-2C3F-A04CA3EBED7A</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DF303D8-10B8-EAD9-E109-C1030C50DDA6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5A68AED0-8123-E7D7-96D2-A103ED3A32CA" name="resposta_cliente_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:25:31 UTC</createdTime>
+<generatorID>5A1E512A-00C1-92FD-502F-55E2B0D7B310</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12DEFA75-E0BC-930A-7BAA-78C480C1469A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A54C6C2D-1985-6429-222C-0CB2462519E9" name="resposta_pergunta_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:25:31 UTC</createdTime>
+<generatorID>0D620CC3-3D4D-A116-304A-E375F1AAF7A8</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2BFE319-3175-618E-A342-FE9BBA077BF1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

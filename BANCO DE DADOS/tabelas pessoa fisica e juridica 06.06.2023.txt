@@ -1,0 +1,28 @@
+-----------------------------tabela Pessoa Fisica----------------------------------
+create table pessoa_fisica (
+id_pessoa_fis   number generated always as identity primary key,
+nome            VARCHAR2(30)                        not null,         
+email           VARCHAR2(50)                        not null,
+senha           VARCHAR2(50)                        not null,
+cpf             VARCHAR2(11)                        not null,
+data_nasc       date                                not null,
+cep             VARCHAR2(8)                         not null,
+rua             VARCHAR2(50)                        not null,
+bairro          VARCHAR2(30)                        not null,
+celular         VARCHAR2(11)                        not null
+);
+
+
+-----------------------------tabela Pessoa Juridica--------------------------------
+create table pessoa_juridica (
+id_pessoa_jur   number generated always as identity primary key,
+nome            VARCHAR2(30)                        not null,
+razao_social    VARCHAR2(50)                        not null,
+email           VARCHAR2(50)                        not null,
+senha           VARCHAR2(50)                        not null,
+cnpj            VARCHAR2(14)                        not null,
+cep             VARCHAR2(8)                         not null,
+rua             VARCHAR2(50)                        not null,
+bairro          VARCHAR2(30)                        not null,
+celular         VARCHAR2(11)                        not null
+);

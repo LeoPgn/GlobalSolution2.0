@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="TerraFertil/src/main/java"/>
+	<classpathentry kind="src" path="TerraFertil/src/test/java"/>
+	<classpathentry kind="src" path="TerraFertilAntigo/src"/>
+	<classpathentry kind="lib" path="TerraFertil/src/main/ArquivoConexao/JDBC Driver for connection JAVA-SQL.jar"/>
+	<classpathentry kind="lib" path="TerraFertilAntigo/ArquivoConexao/JDBC Driver for connection JAVA-SQL.jar"/>
+	<classpathentry kind="output" path="TerraFertil/target/classes"/>
+</classpath>

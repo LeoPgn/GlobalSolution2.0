@@ -1,0 +1,305 @@
+CREATE TABLE doacao (
+    id_doacao                     NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome                          VARCHAR2(50),
+    quantidade                    NUMBER NOT NULL,
+    pessoa_juridica_id_pessoa_jur NUMBER(4) NOT NULL,
+    pessoa_fisica_id_pessoa_fis   NUMBER(4) NOT NULL
+);
+
+CREATE TABLE login (
+    email                         VARCHAR2(50) NOT NULL,
+    senha                         VARCHAR2(50) NOT NULL,
+    pessoa_juridica_id_pessoa_jur NUMBER(4) NOT NULL,
+    pessoa_fisica_id_pessoa_fis   NUMBER(4) NOT NULL
+);
+
+CREATE TABLE noticia (
+    id_noticia NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    titulo     VARCHAR2(100) NOT NULL,
+    texto      CLOB NOT NULL,
+    data_post  DATE NOT NULL
+);
+
+CREATE TABLE pergunta (
+    id_pergunta                   NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    texto                         CLOB NOT NULL,
+    data_post                     DATE NOT NULL,
+    titulo                        VARCHAR2(100) NOT NULL,
+    pessoa_juridica_id_pessoa_jur NUMBER(4) NOT NULL,
+    pessoa_fisica_id_pessoa_fis   NUMBER(4) NOT NULL,
+    resposta_id_resposta          NUMBER(4) NOT NULL
+);
+
+CREATE TABLE pessoa_fisica (
+    id_pessoa_fis NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome          VARCHAR2(50) NOT NULL,
+    email         VARCHAR2(50) NOT NULL,
+    senha         VARCHAR2(50) NOT NULL,
+    cep           NUMBER(8) NOT NULL,
+    celular       NUMBER(11) NOT NULL,
+    rua           VARCHAR2(100) NOT NULL,
+    bairro        VARCHAR2(50) NOT NULL,
+    cpf           VARCHAR2(11) NOT NULL,
+    data_nasc     DATE NOT NULL
+);
+
+CREATE TABLE pessoa_juridica (
+    id_pessoa_jur NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome          VARCHAR2(100) NOT NULL,
+    email         VARCHAR2(50) NOT NULL,
+    senha         VARCHAR2(50) NOT NULL,
+    cep           NUMBER(8) NOT NULL,
+    celular       NUMBER(11) NOT NULL,
+    rua           VARCHAR2(100) NOT NULL,
+    bairro        VARCHAR2(50) NOT NULL,
+    cnpj          VARCHAR2(14) NOT NULL,
+    razao_social  VARCHAR2(50) NOT NULL
+);
+
+CREATE TABLE resposta (
+    id_resposta                   NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    texto                         CLOB NOT NULL,
+    data_post                     DATE NOT NULL,
+    aceitacao                     CHAR(1) NOT NULL,
+    pessoa_fisica_id_pessoa_fis   NUMBER(4) NOT NULL,
+    pessoa_juridica_id_pessoa_jur NUMBER(4) NOT NULL
+);
+
+CREATE TABLE suporte (
+    id_suporte                    NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome                          VARCHAR2(100) NOT NULL,
+    email                         VARCHAR2(100) NOT NULL,
+    texto                         CLOB NOT NULL,
+    pessoa_fisica_id_pessoa_fis   NUMBER(4) NOT NULL,
+    pessoa_juridica_id_pessoa_jur NUMBER(4) NOT NULL
+);
+
+ALTER TABLE doacao
+    ADD CONSTRAINT doacao_pessoa_fisica_fk FOREIGN KEY ( pessoa_fisica_id_pessoa_fis )
+        REFERENCES pessoa_fisica ( id_pessoa_fis );
+
+ALTER TABLE doacao
+    ADD CONSTRAINT doacao_pessoa_juridica_fk FOREIGN KEY ( pessoa_juridica_id_pessoa_jur )
+        REFERENCES pessoa_juridica ( id_pessoa_jur );
+
+ALTER TABLE login
+    ADD CONSTRAINT login_pessoa_fisica_fk FOREIGN KEY ( pessoa_fisica_id_pessoa_fis )
+        REFERENCES pessoa_fisica ( id_pessoa_fis );
+
+ALTER TABLE login
+    ADD CONSTRAINT login_pessoa_juridica_fk FOREIGN KEY ( pessoa_juridica_id_pessoa_jur )
+        REFERENCES pessoa_juridica ( id_pessoa_jur );
+
+ALTER TABLE pergunta
+    ADD CONSTRAINT pergunta_pessoa_fisica_fk FOREIGN KEY ( pessoa_fisica_id_pessoa_fis )
+        REFERENCES pessoa_fisica ( id_pessoa_fis );
+
+ALTER TABLE pergunta
+    ADD CONSTRAINT pergunta_pessoa_juridica_fk FOREIGN KEY ( pessoa_juridica_id_pessoa_jur )
+        REFERENCES pessoa_juridica ( id_pessoa_jur );
+
+ALTER TABLE pergunta
+    ADD CONSTRAINT pergunta_resposta_fk FOREIGN KEY ( resposta_id_resposta )
+        REFERENCES resposta ( id_resposta );
+
+ALTER TABLE resposta
+    ADD CONSTRAINT resposta_pessoa_fisica_fk FOREIGN KEY ( pessoa_fisica_id_pessoa_fis )
+        REFERENCES pessoa_fisica ( id_pessoa_fis );
+
+ALTER TABLE resposta
+    ADD CONSTRAINT resposta_pessoa_juridica_fk FOREIGN KEY ( pessoa_juridica_id_pessoa_jur )
+        REFERENCES pessoa_juridica ( id_pessoa_jur );
+
+ALTER TABLE suporte
+    ADD CONSTRAINT suporte_pessoa_fisica_fk FOREIGN KEY ( pessoa_fisica_id_pessoa_fis )
+        REFERENCES pessoa_fisica ( id_pessoa_fis );
+
+ALTER TABLE suporte
+    ADD CONSTRAINT suporte_pessoa_juridica_fk FOREIGN KEY ( pessoa_juridica_id_pessoa_jur )
+        REFERENCES pessoa_juridica ( id_pessoa_jur );
+
+commit;
+
+
+---------------------Insert's Tabela Pessoa Física------------------------------
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Felipe Castro',   'felipe@fiap.com',    'senha1',  01311000, 11940020822, 'Av. Paulista',                'Bela Vista',          85263254417, '05-09-2000');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Carol Mesquita',  'carol@fiap.com',     'senha2',  01001000, 11994762301, 'Praça da Sé',                 'Sé',                  78945612348, '16-05-1998');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Maria Alice',     'maria@fiap.com',     'senha3',  04263000, 11947156320, 'Parque da Independência',     'Ipiranga',            25136074147, '20-03-2001');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Daniel Oliveira', 'daniel@fiap.com',    'senha4',  05001200, 11998302160, 'Avenida Francisco Matarazzo', 'Água Branca',         87430165113, '30-10-1993');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Clarice Leite',   'clarice@fiap.com',   'senha5',  04094050, 11912345678, 'Av. Pedro Álvares Cabral',    'Vila Mariana',        55566633322, '21-04-1970');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Patricia Avelar', 'patricia@fiap.com',  'senha6',  05317020, 11987654329, 'Av. Prof. Fonseca Rodrigues', 'Alto de Pinheiros',   77788899933, '04-07-1976');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Eduarda Mendes',  'eduarda@fiap.com',   'senha7',  04909025, 11955555555, 'Av. Guarapiranga',            'Parque Guarapiranga', 85296374185, '11-09-1995');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Gabriel Pereira', 'gabriel@fiap.com',   'senha8',  05402600, 11933333333, 'Av. Rebouças',                'Pinheiros',           36925814700, '17-12-1977');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Rafael Muniz',    'rafael@fiap.com',    'senha9',  04533130, 11930755195, 'Av. Henrique Chamma',         'Pinheiros',           96425060093, '20-04-1992');
+insert into pessoa_fisica (nome, email, senha, cep, celular, rua, bairro, cpf, data_nasc) 
+values ('Francisco Silva', 'francisco@fiap.com', 'senha10', 03033020, 11932951529, 'Av. Cruzeiro do Sul',         'Canindé',             90880731044, '19-02-1980');
+commit;
+
+---------------------Insert's Tabela Pessoa Jurídica----------------------------
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('Hortifruti Feliz', 'hortifrutifeliz@fiap.com', 'senha11', 08111760, 11935845751, 'Rua Xavantes',                      'Jardim São Francisco',            54277776000182, 'Fernanda Hortifruti Feliz S.A.');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('Pomar Encantado',  'pomarencantado@fiap.com',  'senha12', 02856030, 11998591453, 'Rua Ada Bertelli Frasson',          'Jardim Princesa',                 87004725000136, 'Pomar Encantado Ltda');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('Campo Fresco',     'campofresco@fiap.com',     'senha13', 04263000, 14995083216, 'Rua São Miguel',                    'Vila Osmany',                     13135611000199, 'Campo Fresco Agricultura Familiar Ltda');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('Plantação Mágica', 'plantacaomagica@fiap.com', 'senha14', 11705550, 13988003522, 'Avenida Presidente Castelo Branco', 'Maracanã',                        89097005000198, 'Plantação Mágica Agroindústria Ltda');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('Cultive Bem',      'cultivebem@fiap.com',      'senha15', 08011400, 11999012286, 'Rua Adelina Silvestre',             'Vila São Silvestre',              3221743100009,  'Cultive Bem Agricultura Familiar Ltda.');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('Fazenda Verde',    'fazendaverde@fiap.com',    'senha16', 08240020, 11981346630, 'Rua Leilas',                        'Jardim Liderança',                42081095000165, 'Fazenda Verde Agropecuária e Agronegócio Ltda');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('EcoPlantio',       'ecoplantio@fiap.com',      'senha17', 74370832, 62999149638, 'Rua FV 27',                         'Residencial Forteville Extensão', 29930742000106, 'EcoPlantio Agricultura Sustentável Ltda');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social)
+values ('Sítio Acolhedor',  'sitioacolhedor@fiap.com',  'senha18', 17026819, 14989346270, 'Rua Quatro',                        'Jardim Benícia',                  37095967000104, 'Sítio Acolhedor Agropecuária e Ecoturismo Ltda');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('AgriOrgânica',     'agriorganica@fiap.com',    'senha19', 13058570, 19989227361, 'Rua Leandro Gonçalves',             'Parque Valença II',               32049882000176, 'AgriOrgânica Sementes e Insumos Ltda');
+insert into pessoa_juridica (nome, email, senha, cep, celular, rua, bairro, cnpj, razao_social) 
+values ('AgroVida',         'agrovida@fiap.com',        'senha20', 13173260, 19987150059, 'Avenida Fuad Assef Malufl',         'Jardim Picerno I',                55759873000174, 'AgroVida Ltda');
+commit; 
+
+-----------------------Insert's Tabela Pergunta---------------------------------
+insert into pergunta (texto, data_post, titulo) 
+values ('texto1',  '01-01-2023', 'titulo1');
+insert into pergunta (texto, data_post, titulo) 
+values ('texto2',  '02-01-2023', 'titulo2');
+insert into pergunta (texto, data_post, titulo) 
+values ('texto3',  '03-01-2023', 'titulo3');
+insert into pergunta (texto, data_post, titulo) 
+values ('texto4',  '04-01-2023', 'titulo4');
+insert into pergunta (texto, data_post, titulo) 
+values ('texto5',  '05-01-2023', 'titulo5');
+insert into pergunta (texto, data_post, titulo) 
+values ('texto6',  '06-01-2023', 'titulo6');
+insert into pergunta (texto, data_post, titulo) 
+values ('texto7',  '07-01-2023', 'titulo7');
+insert into pergunta (texto, data_post, titulo)
+values ('texto8',  '08-01-2023', 'titulo8');
+insert into pergunta (texto, data_post, titulo)
+values ('texto9',  '09-01-2023', 'titulo9');
+insert into pergunta (texto, data_post, titulo)
+values ('texto10', '10-01-2023', 'titulo10');
+commit; 
+
+-----------------------Insert's Tabela Resposta---------------------------------
+insert into resposta (texto, data_post, aceitacao)
+values ('texto11', '11-01-2023', 'aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto12', '12-01-2023', 'não aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto13', '13-01-2023', 'aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto14', '14-01-2023', 'aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto15', '15-01-2023', 'não aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto16', '16-01-2023', 'aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto17', '17-01-2023', 'aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto18', '18-01-2023', 'aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto19', '19-01-2023', 'aceito');
+insert into resposta (texto, data_post, aceitacao)
+values ('texto20', '20-01-2023', 'não aceito');
+commit; 
+
+-----------------------Insert's Tabela Noticia----------------------------------
+insert into noticia (titulo, texto, data_post) 
+values ('titulo11', 'texto21', '21-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo12', 'texto22', '22-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo13', 'texto23', '23-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo14', 'texto24', '24-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo15', 'texto25', '25-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo16', 'texto26', '26-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo17', 'texto27', '27-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo18', 'texto28', '28-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo19', 'texto29', '29-01-2023');
+insert into noticia (titulo, texto, data_post) 
+values ('titulo20', 'texto30', '30-01-2023');
+commit; 
+
+-----------------------Insert's Tabela Suporte----------------------------------
+insert into suporte (nome, email, texto) 
+values ('José Francisco',   'josecarlos@fiap.com', 'Gostei do site, achei intuitivo, mas precisa de mais explicações.');
+insert into suporte (nome, email, texto)
+values ('Maria Carvalho',   'maria@fiap.com',      'Precisa de mcores mais verdes.');
+insert into suporte (nome, email, texto)
+values ('Mariana Lourenzo', 'mariana@fiap.com',    'Não consegui achar a página sobre fertilizantes.');
+insert into suporte (nome, email, texto)
+values ('Jessica Souza',    'jessica@fiap.com',    'Amei o site! Aprendi muito aqui.');
+insert into suporte (nome, email, texto)
+values ('Joséfa Guimarães', 'josefa@fiap.com',     'Achei muito fácil de mexer, vou usar mais vezes.');
+insert into suporte (nome, email, texto)
+values ('Marcelo Lima',     'marcelo@fiap.com',    'Tive dificuldade de mexer no fórum.');
+insert into suporte (nome, email, texto)
+values ('Cássio Junior',    'cassio@fiap.com',     'Podem criar uma área de mensagens por favor.');
+insert into suporte (nome, email, texto)
+values ('José Alberto',     'josealber@fiap.com',  'Tive dificuldade no começo, mas logo consegui entender como usa.');
+insert into suporte (nome, email, texto)
+values ('Lucia Almeida',    'lucia@fiap.com',      'Fiz muitos amigos através do fórum e aprendi muito, mas pode melhorar.');
+insert into suporte (nome, email, texto)
+values ('Edna Batista',     'edna@fiap.com',       'O site é muito lindo, mas senti falta de um lugar de mensagens.');
+commit; 
+
+-----------------------Insert's Tabela Login------------------------------------
+insert into login (email, senha) 
+values ('felipe@fiap.com',         'senha1');
+insert into login (email, senha) 
+values ('carol@fiap.com',          'senha2');
+insert into login (email, senha) 
+values ('maria@fiap.com',          'senha3');
+insert into login (email, senha) 
+values ('daniel@fiap.com',         'senha4');
+insert into login (email, senha) 
+values ('clarice@fiap.com',        'senha5');
+insert into login (email, senha) 
+values ('fazendaverde@fiap.com',   'senha16');
+insert into login (email, senha) 
+values ('ecoplantio@fiap.com',     'senha17');
+insert into login (email, senha) 
+values ('sitioacolhedor@fiap.com', 'senha18');
+insert into login (email, senha) 
+values ('agriorganica@fiap.com',   'senha19');
+insert into login (email, senha) 
+values ('agrovida@fiap.com',       'senha20');
+commit; 
+
+-----------------------Insert's Tabela Doação-----------------------------------
+insert into doacao (nome, quantidade) 
+values ('Patricia Avelar',  5.0);
+insert into doacao (nome, quantidade)
+values ('Eduarda Mendes',   1.5);
+insert into doacao (nome, quantidade)
+values ('Gabriel Pereira',  2.5);
+insert into doacao (nome, quantidade)
+values ('Rafael Muniz',     2.0);
+insert into doacao (nome, quantidade)
+values ('Francisco Silva',  7.0);
+insert into doacao (nome, quantidade)
+values ('Hortifruti Feliz', 15.0);
+insert into doacao (nome, quantidade)
+values ('Pomar Encantado',  17.0);
+insert into doacao (nome, quantidade)
+values ('Campo Fresco',     20.0);
+insert into doacao (nome, quantidade)
+values ('Plantação Mágica', 22.5);
+insert into doacao (nome, quantidade)
+values ('Cultive', 30.0);

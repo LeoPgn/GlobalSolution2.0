@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBC7B0EC-340E-2389-96B1-159F4BA2E51E" name="cliente">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>7A33A500-9234-CC2D-9D7B-2DAC7A605CC1</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cliente_id" id="88EC339E-F273-B9D4-EB83-8B993EBCFF9E">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>06B024C6-FA94-3F27-B171-60D1EB0F80A4</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cliente_nome" id="CFBB99CB-2F71-844A-88EE-E5166F452945">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>EE810B79-A502-28B3-A737-257AC0B830EC</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="E902C93C-6838-2A01-70AC-069F4883FA34">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>23C65525-F8EC-E664-0CBF-B25A9501C7F1</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cpf" id="C5B62FF9-881C-2ED5-7CAC-FAD52D8DDE98">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>D5BD17F3-756E-A397-30B9-F3EB6E83EFC6</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cnpj" id="7302B083-99DF-1444-2239-BC6C3FA4B060">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>3DB9680F-F6B4-1B14-B9C8-C8B6207586AD</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>14</dataTypePrecision>
+<ownDataTypeParameters>,14,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="senha" id="2A1B0859-A570-51D5-0E82-25A4E743F013">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>F728CF19-F32C-9CBF-49F8-93B3EE07DD20</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_nasc" id="C7E979C3-FF16-CDB8-F8FB-32EA8906146E">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>CCFAFC67-854F-8EA6-E7A7-0538B3CFDEE9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contato" id="0BB1C2CC-E853-7E9C-9619-658F806AA63A">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>2D9998E3-B869-4DA9-2575-2E6A96F9014B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cep" id="7A1A1A8E-06D1-DA4D-8236-7D68EE22B396">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>E547175B-843A-4195-50D2-4696194037B8</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C03D445C-CA5B-D7BD-0377-A2BDA19E5DF8" name="cliente_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:22:30 UTC</createdTime>
+<generatorID>B9717EF2-20EC-A4F3-3B87-249F9C92C936</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88EC339E-F273-B9D4-EB83-8B993EBCFF9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

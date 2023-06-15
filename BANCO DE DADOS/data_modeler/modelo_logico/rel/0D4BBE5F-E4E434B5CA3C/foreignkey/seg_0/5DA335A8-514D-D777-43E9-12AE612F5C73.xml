@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5DA335A8-514D-D777-43E9-12AE612F5C73" containerWithKeyObject="07C7B9BA-886A-EC92-A464-4B4972ADC156" localFKIndex="CDD40C46-A612-EDD5-ECF7-52DC41E93FC0" name="pergunta_topico_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-06-01 01:25:31 UTC</createdTime>
+<generatorID>4A7DDB5F-944A-F76E-5332-F6C6CA53B151</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<referredTableLongName>topico</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>64DB048B-2D01-F719-3EF6-85E08CDAB163</referredTableID>
+<keyObject>8E580ED0-0361-BD56-27ED-E1A3855E9DD0</keyObject>
+<referredKeyID>8E580ED0-0361-BD56-27ED-E1A3855E9DD0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>topico_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
